@@ -1,1 +1,1 @@
-# mastering_database_administration
+# Mastering_SQL_Server_Database_Administration
