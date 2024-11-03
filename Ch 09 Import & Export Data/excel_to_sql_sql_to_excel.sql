@@ -39,3 +39,9 @@ SET IDENTITY_INSERT HR.dbo.Employees OFF;
 
 -- Step 6: Query the data from the Employees table to verify the inserts
 SELECT * FROM HR.dbo.Employees;
+
+-------------------------------------------------- to move data from SQL to Excel ---------------------------------------------------
+------------------------------------------------    (in cmd using bcp utility) -------------------------------------------------------
+bcp "SELECT 'product_name' as product_name, 'list_price' as list_price UNION ALL SELECT CONVERT(varchar(max), product_name), CONVERT(varchar(max), list_price) FROM mastering_sql_server.production.products WHERE model_year=2017" queryout "d:\bcpdata\products001.xlsx" -c -t, -T -S ROHIT
+
+bcp "SELECT 'product_name' as product_name, 'list_price' as list_price UNION ALL SELECT CONVERT(varchar(max), product_name), CONVERT(varchar(max), list_price) FROM mastering_sql_server.production.products WHERE model_year=2017" queryout "d:\bcpdata\products50.xlsx" -c -t, -T -S ROHIT
